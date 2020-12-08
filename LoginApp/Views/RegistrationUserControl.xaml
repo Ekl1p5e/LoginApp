@@ -8,57 +8,74 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         
-        <TextBlock Grid.Row="0" Grid.Column="0">Registration:</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="5">Login:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25">Registration:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Hyperlink>Login</Hyperlink>
+        </TextBlock>
 
-        <TextBlock Grid.Row="2" Grid.Column="1">First Name:</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="2" />
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="4" Grid.Column="1">Last Name:</TextBlock>
-        <TextBox Grid.Row="4" Grid.Column="2" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="6" Grid.Column="1">Email Id:</TextBlock>
-        <TextBox Grid.Row="6" Grid.Column="2" />
+            <TextBlock Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center">First Name:</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
 
-        <TextBlock Grid.Row="8" Grid.Column="1">Password:</TextBlock>
-        <TextBox Grid.Row="8" Grid.Column="2" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center">Last Name:</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
+
+            <TextBlock Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Center">Email Id:</TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
+
+            <TextBlock Grid.Row="3" Grid.Column="1" Height="30" VerticalAlignment="Center">Password:</TextBlock>
+            <TextBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
+
+            <TextBlock Grid.Row="4" Grid.Column="1" Height="30" VerticalAlignment="Center">Confirm Password:</TextBlock>
+            <TextBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
+
+            <TextBlock Grid.Row="5" Grid.Column="1" Height="30" VerticalAlignment="Center">Address:</TextBlock>
+            <TextBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Height="30" />
+
+            <Button Grid.Row="6" Grid.Column="2" Height="30" Width="90">Submit</Button>
+            <Button Grid.Row="6" Grid.Column="3" Height="30" Width="90">Reset</Button>
+            <Button Grid.Row="6" Grid.Column="4" Height="30" Width="90">Cancel</Button>
+        </Grid>
+        <!--
 
         <TextBlock Grid.Row="10" Grid.Column="1">Confirm Password:</TextBlock>
         <TextBox Grid.Row="10" Grid.Column="2" />
 
         <TextBlock Grid.Row="12" Grid.Column="1">Address:</TextBlock>
         <TextBox Grid.Row="12" Grid.Column="2" />
-
-        <Button Grid.Row="14" Grid.Column="2">Login</Button>
-        <Button Grid.Row="14" Grid.Column="3">Register</Button>
-        <Button Grid.Row="14" Grid.Column="4">Register</Button>
+-->
         
     </Grid>
 </UserControl>
