@@ -5,11 +5,11 @@ using System.Windows.Controls;
 namespace LoginApp.Views
 {
     /// <summary>
-    /// Interaction logic for LoginUserControl.xaml
+    /// Interaction logic for LoginListUserControl.xaml
     /// </summary>
-    public partial class LoginUserControl : UserControl, ILoginUserControl
+    public partial class LoginListUserControl : UserControl, ILoginListUserControl
     {
-        public LoginUserControl(ILoginViewModel viewModel)
+        public LoginListUserControl(ILoginListViewModel viewModel)
         {
             InitializeComponent();
 
