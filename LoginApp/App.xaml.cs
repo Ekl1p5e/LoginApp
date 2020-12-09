@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using LoginApp.DataAccess;
 using LoginApp.DataAccess.Interfaces;
+using LoginApp.Models;
+using LoginApp.Models.Interfaces;
 using LoginApp.ViewModels;
 using LoginApp.ViewModels.Helpers;
 using LoginApp.ViewModels.Interfaces;
@@ -60,6 +62,22 @@ namespace LoginApp
             builder.RegisterType<RegistrationAccess>().
                 As<IRegistrationAccess>().
                 SingleInstance();
+
+            builder.RegisterType<LoginDbContext>().
+                As<ILoginDbContext>().
+                SingleInstance();
+
+            builder.RegisterType<RegistrationQuery>().
+                As<IRegistrationQuery>().
+                SingleInstance();
+
+            builder.RegisterType<CurrentUser>().
+                As<ICurrentUser>().
+                SingleInstance();
+
+            //builder.RegisterType<LoginDbContext>().
+            //    As<ILoginDbContext>().
+            //    SingleInstance();
 
             builder.RegisterType<MainWindow>();
 

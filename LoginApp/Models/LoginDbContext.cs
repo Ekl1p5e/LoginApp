@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LoginApp.Models.Entities;
+using LoginApp.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
 namespace LoginApp.Models
 {
-    public partial class LoginDbContext : DbContext
+    public partial class LoginDbContext : DbContext, ILoginDbContext
     {
         public LoginDbContext()
         {
@@ -16,6 +18,7 @@ namespace LoginApp.Models
         }
 
         public virtual DbSet<LoginTime> LoginTimes { get; set; }
+
         public virtual DbSet<Registration> Registrations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,5 +75,15 @@ namespace LoginApp.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        void ILoginDbContext.Add<T>(T entity)
+        {
+            this.Add(entity);
+        }
+
+        void ILoginDbContext.SaveChanges()
+        {
+            this.SaveChanges();
+        }
     }
 }

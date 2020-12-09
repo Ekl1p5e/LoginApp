@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LoginApp.Models
+namespace LoginApp.Models.Entities
 {
     public partial class Registration
     {

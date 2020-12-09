@@ -41,10 +41,10 @@
             </Grid.ColumnDefinitions>
             
             <TextBlock Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center">Email</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Height="30"/>
+            <TextBox Text="{Binding EmailAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Height="30" VerticalContentAlignment="Center"/>
 
             <TextBlock Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Center">Password</TextBlock>
-            <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Height="30"/>
+            <TextBox Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Height="30" VerticalContentAlignment="Center"/>
 
             <Button Grid.Row="3" Grid.Column="2" Height="30" Width="90"
                     Command="{Binding LoginCommand}">Login</Button>

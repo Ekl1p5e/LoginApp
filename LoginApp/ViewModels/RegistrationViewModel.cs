@@ -1,5 +1,5 @@
 ﻿using LoginApp.DataAccess.Interfaces;
-using LoginApp.Models;
+using LoginApp.Models.Entities;
 using LoginApp.ViewModels.Base;
 using LoginApp.ViewModels.Commands;
 using LoginApp.ViewModels.Interfaces;

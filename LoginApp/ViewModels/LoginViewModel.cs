@@ -1,5 +1,6 @@
 ﻿using LoginApp.DataAccess.Interfaces;
 using LoginApp.Models;
+using LoginApp.Models.Interfaces;
 using LoginApp.ViewModels.Base;
 using LoginApp.ViewModels.Commands;
 using LoginApp.ViewModels.Interfaces;
@@ -13,16 +14,19 @@ namespace LoginApp.ViewModels
     {
         private readonly INavigationMediator _mediator;
         private readonly ILoginAccess _loginAccess;
+        private readonly ICurrentUser _currentUser;
 
         private string _emailAddress;
         private string _password;
 
         public LoginViewModel(
             INavigationMediator mediator,
-            ILoginAccess loginAccess)
+            ILoginAccess loginAccess,
+            ICurrentUser currentUser)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
             _loginAccess = loginAccess ?? throw new ArgumentNullException(nameof(loginAccess));
+            _currentUser = currentUser ?? throw new ArgumentNullException(nameof(currentUser));
         }
 
         public string EmailAddress
@@ -62,9 +66,10 @@ namespace LoginApp.ViewModels
             bool success = _loginAccess.Login(loginInfo);
             if (success)
             {
+                _currentUser.Update(loginInfo.UserName);
+
                 _mediator.ChangeWindow<LoginListUserControl>();
             }
-
         }
     }
 }
