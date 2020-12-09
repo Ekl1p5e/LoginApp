@@ -5,5 +5,7 @@
         void Update(string userName);
 
         public string UserId { get; }
+
+        void Logout();
     }
 }

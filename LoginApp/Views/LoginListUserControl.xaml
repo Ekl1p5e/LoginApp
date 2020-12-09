@@ -17,40 +17,21 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <Button Grid.Row="0" Grid.Column="0" Height="30" Width="90" />
-        
-        <Button Grid.Row="0" Grid.Column="1" Height="30" Width="90" />
 
-        <ListView Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button Grid.Row="0" Grid.Column="0" Height="30" Width="90" Command="{Binding ShowLoginsCommand}">Show Logins</Button>
 
-        <!--<ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-            --><!--Built in Cells--><!--
+        <Button Grid.Row="0" Grid.Column="1" Height="30" Width="90" Command="{Binding LogOutCommand}">Log Out</Button>
+
+        <ListView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding LoginTimes}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding .}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="{Binding Name}" />
+                        <TextBlock  Text="{Binding Time}" Margin="5,0,0,0" />
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-            --><!--Custom View Cells-->
-            <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    --><!--
-        </ListView>-->
+        </ListView>
 
     </Grid>
 </UserControl>

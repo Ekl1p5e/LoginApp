@@ -66,6 +66,8 @@ namespace LoginApp.ViewModels
             bool success = _loginAccess.Login(loginInfo);
             if (success)
             {
+                Password = null;
+
                 _currentUser.Update(loginInfo.UserName);
 
                 _mediator.ChangeWindow<LoginListUserControl>();

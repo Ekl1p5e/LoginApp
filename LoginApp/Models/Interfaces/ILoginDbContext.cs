@@ -7,6 +7,8 @@ namespace LoginApp.Models.Interfaces
     {
         DbSet<Registration> Registrations { get; }
 
+        DbSet<LoginTime> LoginTimes { get; }
+
         void Add<T>(T entity);
 
         void SaveChanges();
