@@ -17,7 +17,7 @@ namespace LoginApp.ViewModels
         private readonly ILoginAccess _loginAccess;
         private readonly ICurrentUser _currentUser;
 
-        private IEnumerable<LoginTimeInfo> _logins;
+        private List<LoginTimeInfo> _logins;
 
         public LoginListViewModel(
             INavigationMediator mediator,
@@ -45,7 +45,7 @@ namespace LoginApp.ViewModels
             }
         }
 
-        public IEnumerable<LoginTimeInfo> LoginTimes
+        public List<LoginTimeInfo> LoginTimes
         {
             get => _logins;
             set => SetProperty(ref _logins, value);
@@ -53,6 +53,8 @@ namespace LoginApp.ViewModels
 
         private void Logout()
         {
+            LoginTimes.Clear();
+
             _currentUser.Logout();
         }
 

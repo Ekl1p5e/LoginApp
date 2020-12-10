@@ -92,8 +92,15 @@ namespace LoginApp.ViewModels
         {
             get
             {
-                return new BasicCommand(c => _mediator.ChangeWindow<LoginUserControl>(), c => true);
+                return new BasicCommand(c => GoToLoginScreen(), c => true);
             }
+        }
+
+        private void GoToLoginScreen()
+        {
+            ClearFields();
+
+            _mediator.ChangeWindow<LoginUserControl>();
         }
 
         public void SubmitAction()

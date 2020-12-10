@@ -70,8 +70,16 @@ namespace LoginApp.ViewModels
 
                 _currentUser.Update(loginInfo.UserName);
 
+                ClearWindow();
+
                 _mediator.ChangeWindow<LoginListUserControl>();
             }
+        }
+
+        private void ClearWindow()
+        {
+            EmailAddress = null;
+            Password = null;
         }
     }
 }

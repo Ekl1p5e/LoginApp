@@ -2,7 +2,7 @@
 (
 	[LoginId] INT IDENTITY(1, 1),
 	[RegistrationId] INT,
-	[Timestamp] AS CURRENT_TIMESTAMP,
+	[Timestamp] DATETIME2 DEFAULT GETUTCDATE(),
 	PRIMARY KEY ([LoginId]),
 	FOREIGN KEY ([RegistrationId]) REFERENCES [dbo].[Registration]([RegistrationId]),
 )

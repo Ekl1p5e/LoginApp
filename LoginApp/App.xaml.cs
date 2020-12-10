@@ -75,10 +75,6 @@ namespace LoginApp
                 As<ICurrentUser>().
                 SingleInstance();
 
-            //builder.RegisterType<LoginDbContext>().
-            //    As<ILoginDbContext>().
-            //    SingleInstance();
-
             builder.RegisterType<MainWindow>();
 
             var container = builder.Build();
